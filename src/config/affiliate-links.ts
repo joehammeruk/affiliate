@@ -2,12 +2,14 @@
  * Single source of truth for every outbound URL on this site.
  * There are no other external links — swap these four values only.
  */
+// SiteGround UK affiliate Campaign links — one per product. Do not hand-edit URLs;
+// manage slugs/landing pages in the SiteGround dashboard.
 export const AFFILIATE_LINKS = {
   /** Primary CTA: hero, header, sticky bar, final section */
-  primary: "https://example.com/AFFILIATE_PRIMARY",
-  coderickAi: "https://example.com/AFFILIATE_CODERICK_AI",
-  aiEcommerceBuilder: "https://example.com/AFFILIATE_AI_ECOMMERCE_BUILDER",
-  sitegroundAiStudio: "https://example.com/AFFILIATE_SITEGROUND_AI_STUDIO",
+  primary: "https://siteground.co.uk/go/3zd28qf96z",
+  coderickAi: "https://siteground.co.uk/go/hostadvance-coderick",
+  aiEcommerceBuilder: "https://siteground.co.uk/go/hostadvance-ecommerce",
+  sitegroundAiStudio: "https://siteground.co.uk/go/hostadvance-aistudio",
 } as const;
 
 export type AffiliateLinkKey = keyof typeof AFFILIATE_LINKS;

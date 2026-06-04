@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { AffiliateArrow, AffiliateLink } from "@/components/affiliate-link";
 import { ProductIcon } from "@/components/product-icon";
 import type { Product } from "@/config/products";
@@ -45,7 +46,14 @@ export function OfferCard({ product }: { product: Product }) {
         ))}
       </ul>
 
-      <div className="mt-8 flex flex-col gap-3">
+      <Link
+        href={product.reviewPath}
+        className="mt-6 text-sm font-medium text-emerald-400 transition-colors hover:text-emerald-300"
+      >
+        Read our review →
+      </Link>
+
+      <div className="mt-6 flex flex-col gap-3">
         <p
           className={`rounded-md border py-2.5 text-center text-[10px] font-bold uppercase tracking-widest text-emerald-500/90 ${theme.trialStrip}`}
         >

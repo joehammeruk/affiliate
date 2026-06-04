@@ -31,6 +31,7 @@ export function AffiliateLink({
   return (
     <a
       href={AFFILIATE_LINKS[link]}
+      target="_blank"
       rel="sponsored noopener noreferrer"
       className={`${variants[variant]} ${className}`.trim()}
       {...props}

@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, DM_Sans } from "next/font/google";
+import { DisclosureBar } from "@/components/disclosure-bar";
+import { SITE_NAME, SITE_URL } from "@/config/site";
 import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({
@@ -15,14 +17,22 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Best AI Tools for Builders — 14-Day Free Trials",
   description:
     "Coderick AI, AI Ecommerce Builder, and SiteGround AI Studio — compare and start your 14-day free trial. Affiliate partner offers.",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
+  },
   openGraph: {
-    title: "Best AI Tools for Builders — 14-Day Free Trials",
-    description:
-      "Ship sites, stores, and WordPress faster with AI. Every tool includes a 14-day free trial.",
+    siteName: SITE_NAME,
+    locale: "en_GB",
     type: "website",
+  },
+  twitter: {
+    card: "summary",
   },
 };
 
@@ -33,7 +43,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${bricolage.variable} ${dmSans.variable}`}>
-      <body className="font-sans">{children}</body>
+      <body className="font-sans">
+        <DisclosureBar />
+        {children}
+      </body>
     </html>
   );
 }

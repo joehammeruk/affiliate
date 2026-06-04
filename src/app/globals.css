@@ -59,6 +59,38 @@
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
   }
 
+  .review-prose h1 {
+    @apply font-display text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-5xl;
+  }
+
+  .review-prose > p.lead {
+    @apply mt-6 text-lg leading-relaxed text-zinc-400;
+  }
+
+  .review-prose h2 {
+    @apply font-display mt-14 text-2xl font-bold tracking-tight text-white first:mt-10;
+  }
+
+  .review-prose h3 {
+    @apply mt-8 text-lg font-semibold text-zinc-100;
+  }
+
+  .review-prose p {
+    @apply mt-4 text-sm leading-relaxed text-zinc-400 sm:text-base;
+  }
+
+  .review-prose ul {
+    @apply mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-zinc-400 sm:text-base;
+  }
+
+  .review-prose ol {
+    @apply mt-4 list-decimal space-y-2 pl-5 text-sm leading-relaxed text-zinc-400 sm:text-base;
+  }
+
+  .review-prose a.inline {
+    @apply font-medium text-emerald-400 underline decoration-emerald-400/30 underline-offset-4 transition-colors hover:text-emerald-300;
+  }
+
   @media (prefers-reduced-motion: no-preference) {
     .animate-fade-up {
       animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;

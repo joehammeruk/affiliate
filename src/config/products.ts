@@ -18,6 +18,7 @@ export type Product = {
   description: string;
   highlights: string[];
   linkKey: AffiliateLinkKey;
+  reviewPath: string;
   icon: "code" | "cart" | "wordpress";
   theme: ProductTheme;
   featured?: boolean;
@@ -32,6 +33,7 @@ export const PRODUCTS: Product[] = [
       "Describe your vision in plain language and watch production-ready pages come to life. Built for developers who want speed without sacrificing control.",
     highlights: ["Live preview", "Export-ready code", "Dev workflows"],
     linkKey: "coderickAi",
+    reviewPath: "/coderick-ai-review",
     icon: "code",
     theme: {
       card: "bg-[#0D1518]",
@@ -52,6 +54,7 @@ export const PRODUCTS: Product[] = [
       "Launch storefronts in hours, not weeks. Generate product copy, hero images, and layouts with AI—then refine everything visually.",
     highlights: ["AI images", "One-click sections", "Payments ready"],
     linkKey: "aiEcommerceBuilder",
+    reviewPath: "/ai-ecommerce-builder-review",
     icon: "cart",
     featured: true,
     theme: {
@@ -73,6 +76,7 @@ export const PRODUCTS: Product[] = [
       "Offload updates, security checks, and content workflows to intelligent agents tuned for WordPress—so you can focus on growth.",
     highlights: ["Agent automations", "WP-native", "Managed hosting"],
     linkKey: "sitegroundAiStudio",
+    reviewPath: "/ai-studio-review",
     icon: "wordpress",
     theme: {
       card: "bg-[#0E1712]",

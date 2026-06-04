@@ -1,13 +1,92 @@
+import Link from "next/link";
 import { AffiliateArrow, AffiliateLink } from "@/components/affiliate-link";
 import { OfferCard } from "@/components/offer-card";
 import { ScrollLink } from "@/components/scroll-link";
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
+import { SiteJsonLd } from "@/components/site-json-ld";
 import { AFFILIATE_LINKS } from "@/config/affiliate-links";
 import { PRODUCTS } from "@/config/products";
+import { createPageMetadata } from "@/lib/metadata";
+
+export const metadata = createPageMetadata({
+  title: "Best AI Tools for Builders — 14-Day Free Trials",
+  description:
+    "Compare Coderick AI, SiteGround AI Studio, and the AI ecommerce builder. Independent reviews, guides, and 14-day free trials.",
+  path: "/",
+  openGraphType: "website",
+});
 
 const trialPoints = [
   "14-day free trial on every partner tool",
   "No credit card required to start",
   "Cancel anytime during the trial",
+] as const;
+
+const reviews = [
+  {
+    href: "/coderick-ai-review",
+    title: "Coderick AI review",
+    description: "Vibe coding on SiteGround with deployment built in.",
+  },
+  {
+    href: "/ai-studio-review",
+    title: "SiteGround AI Studio review",
+    description: "Multi-model workspace and 15+ business agents.",
+  },
+  {
+    href: "/ai-ecommerce-builder-review",
+    title: "AI ecommerce builder review",
+    description: "Drag-and-drop sites and stores with native AI help.",
+  },
+  {
+    href: "/coderick-ai-vs-lovable",
+    title: "Coderick AI vs Lovable",
+    description: "Hosting, deployment, and who each tool fits.",
+  },
+] as const;
+
+const guides = [
+  {
+    href: "/ai-agent-wordpress-guide",
+    title: "WordPress AI Agent guide",
+    description: "Connect, task prompts, Power Mode, multi-site.",
+  },
+  {
+    href: "/coderick-ai-build-a-crm",
+    title: "Build a CRM with Coderick AI",
+    description: "Brief → chat → live internal tool on SiteGround.",
+  },
+  {
+    href: "/launch-online-store-with-ai",
+    title: "Launch a store with AI in a day",
+    description: "Ecommerce trial workflow with AI catalog help.",
+  },
+  {
+    href: "/coderick-ai-export-code",
+    title: "Export code from Coderick?",
+    description: "Versioning vs download—what SiteGround documents.",
+  },
+  {
+    href: "/ai-studio-vs-chatgpt-plus",
+    title: "AI Studio vs ChatGPT Plus",
+    description: "Multi-model workspace vs general chat subscription.",
+  },
+  {
+    href: "/siteground-ai-studio-free-tokens",
+    title: "20,000 free tokens explained",
+    description: "Budget Essential plan usage for hosting clients.",
+  },
+  {
+    href: "/coderick-ai-vs-bolt",
+    title: "Coderick AI vs Bolt",
+    description: "SiteGround managed apps vs Bolt Cloud.",
+  },
+  {
+    href: "/coderick-ai-vs-v0",
+    title: "Coderick AI vs v0",
+    description: "Full app platform vs React UI generator.",
+  },
 ] as const;
 
 export default function HomePage() {
@@ -29,6 +108,7 @@ export default function HomePage() {
 
   return (
     <>
+      <SiteJsonLd />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -36,19 +116,9 @@ export default function HomePage() {
 
       <div className="noise pointer-events-none fixed inset-0 z-50 opacity-40 mix-blend-overlay" aria-hidden="true" />
 
-      <header className="fixed inset-x-0 top-0 z-40 border-b border-zinc-800/60 bg-[#09090B]/80 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-4">
-          <p className="font-display text-sm font-semibold tracking-tight text-white">
-            AI Infrastructure Hub
-          </p>
-          <AffiliateLink link="primary" variant="compact" className="hidden sm:inline-flex">
-            Start free trial
-            <AffiliateArrow />
-          </AffiliateLink>
-        </div>
-      </header>
+      <SiteHeader />
 
-      <main className="pt-[4.25rem]">
+      <main className="pt-32">
         <section
           className="relative overflow-hidden border-b border-white/[0.06]"
           aria-labelledby="hero-heading"
@@ -140,43 +210,112 @@ export default function HomePage() {
         </section>
 
         <section
+          id="reviews"
           className="border-y border-white/[0.06] bg-zinc-900/30"
-          aria-labelledby="paths-heading"
+          aria-labelledby="reviews-heading"
         >
           <div className="mx-auto max-w-6xl px-6 py-20 sm:py-24">
-            <h2
-              id="paths-heading"
-              className="font-display text-center text-2xl font-bold text-white sm:text-3xl"
-            >
-              Not sure where to start?
-            </h2>
-            <p className="mx-auto mt-3 max-w-xl text-center text-sm text-zinc-500">
-              Tap the path that matches you—each row opens the partner trial.
-            </p>
-
-            <ul className="mx-auto mt-12 max-w-2xl divide-y divide-white/[0.06]">
-              {PRODUCTS.map((product) => (
-                <li key={product.id}>
-                  <AffiliateLink link={product.linkKey} variant="row" className="group">
-                    <span>
-                      <span className="block font-display text-base font-semibold text-white">
-                        {product.name}
-                      </span>
-                      <span className="mt-0.5 block text-sm text-zinc-500">
-                        {product.tagline}
-                      </span>
+            <header className="mx-auto max-w-2xl text-center">
+              <h2
+                id="reviews-heading"
+                className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl"
+              >
+                In-depth reviews
+              </h2>
+              <p className="mt-4 text-zinc-400">
+                Independent write-ups grounded in SiteGround&apos;s published capabilities —
+                no hype, no invented benchmarks.
+              </p>
+            </header>
+            <ul className="mt-12 grid gap-4 sm:grid-cols-2">
+              {reviews.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className="block rounded-xl border border-white/[0.08] bg-zinc-900/50 p-6 transition-colors hover:border-white/15 hover:bg-zinc-900/80"
+                  >
+                    <h3 className="font-display text-lg font-semibold text-white">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-zinc-500">{item.description}</p>
+                    <span className="mt-4 inline-flex text-sm font-medium text-emerald-400">
+                      Read review →
                     </span>
-                    <span
-                      className={`flex shrink-0 items-center gap-2 text-sm font-semibold ${product.theme.labelColor}`}
-                    >
-                      Try free
-                      <AffiliateArrow />
-                    </span>
-                  </AffiliateLink>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
+        </section>
+
+        <section
+          className="mx-auto max-w-6xl px-6 pb-20 sm:pb-24"
+          aria-labelledby="guides-heading"
+        >
+          <header className="mx-auto max-w-2xl text-center">
+            <h2
+              id="guides-heading"
+              className="font-display text-2xl font-bold tracking-tight text-white sm:text-3xl"
+            >
+              Guides &amp; comparisons
+            </h2>
+            <p className="mt-4 text-zinc-400">
+              Step-by-step workflows and honest tool comparisons for high-intent searches.
+            </p>
+          </header>
+          <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-2">
+            {guides.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className="block rounded-xl border border-white/[0.08] bg-zinc-900/30 p-5 transition-colors hover:border-white/15 hover:bg-zinc-900/60"
+                >
+                  <h3 className="font-display text-base font-semibold text-white">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-sm text-zinc-500">{item.description}</p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section
+          className="relative mx-auto max-w-6xl px-6 py-20 sm:py-24"
+          aria-labelledby="paths-heading"
+        >
+          <h2
+            id="paths-heading"
+            className="font-display text-center text-2xl font-bold text-white sm:text-3xl"
+          >
+            Not sure where to start?
+          </h2>
+          <p className="mx-auto mt-3 max-w-xl text-center text-sm text-zinc-500">
+            Tap the path that matches you—each row opens the partner trial.
+          </p>
+
+          <ul className="mx-auto mt-12 max-w-2xl divide-y divide-white/[0.06]">
+            {PRODUCTS.map((product) => (
+              <li key={product.id}>
+                <AffiliateLink link={product.linkKey} variant="row" className="group">
+                  <span>
+                    <span className="block font-display text-base font-semibold text-white">
+                      {product.name}
+                    </span>
+                    <span className="mt-0.5 block text-sm text-zinc-500">
+                      {product.tagline}
+                    </span>
+                  </span>
+                  <span
+                    className={`flex shrink-0 items-center gap-2 text-sm font-semibold ${product.theme.labelColor}`}
+                  >
+                    Try free
+                    <AffiliateArrow />
+                  </span>
+                </AffiliateLink>
+              </li>
+            ))}
+          </ul>
         </section>
 
         <section
@@ -209,16 +348,7 @@ export default function HomePage() {
         </section>
       </main>
 
-      <footer className="mt-4 border-t border-zinc-800/60 px-6 py-8">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 text-[13px] text-zinc-500 md:flex-row">
-          <p>© {new Date().getFullYear()} AI Infrastructure Hub. All rights reserved.</p>
-          <p className="max-w-md text-center md:text-right">
-            <strong className="text-zinc-400">Affiliate Disclosure:</strong> This
-            site is reader-supported. We may earn a commission when you start a
-            trial via our partner links—at no extra cost to you.
-          </p>
-        </div>
-      </footer>
+      <SiteFooter />
 
       <aside
         className="fixed inset-x-0 bottom-0 z-40 border-t border-white/[0.08] bg-zinc-950/90 p-4 backdrop-blur-xl sm:hidden"
