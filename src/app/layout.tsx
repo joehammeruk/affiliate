@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, DM_Sans } from "next/font/google";
+import { ConditionalAnalytics } from "@/components/conditional-analytics";
+import { CookieConsentBanner } from "@/components/cookie-consent-banner";
 import { DisclosureBar } from "@/components/disclosure-bar";
 import { SITE_NAME, SITE_URL } from "@/config/site";
 import "./globals.css";
@@ -55,6 +57,8 @@ export default function RootLayout({
       <body className="font-sans">
         <DisclosureBar />
         {children}
+        <CookieConsentBanner />
+        <ConditionalAnalytics />
       </body>
     </html>
   );

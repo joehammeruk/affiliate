@@ -87,6 +87,43 @@
     @apply mt-4 list-decimal space-y-2 pl-5 text-sm leading-relaxed text-zinc-400 sm:text-base;
   }
 
+  .legal-prose-h1 {
+    @apply font-display text-3xl font-extrabold tracking-tight text-white sm:text-4xl;
+  }
+
+  .legal-prose h2 {
+    @apply font-display mt-10 text-xl font-bold tracking-tight text-white first:mt-0;
+  }
+
+  .legal-prose h3 {
+    @apply mt-6 text-base font-semibold text-zinc-200;
+  }
+
+  .legal-prose p {
+    @apply mt-4 text-sm leading-relaxed text-zinc-400 sm:text-base;
+  }
+
+  .legal-prose ul,
+  .legal-prose ol {
+    @apply mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-zinc-400 sm:text-base;
+  }
+
+  .legal-prose ol {
+    @apply list-decimal;
+  }
+
+  .legal-prose a {
+    @apply font-medium text-emerald-400 underline decoration-emerald-400/30 underline-offset-4 hover:text-emerald-300;
+  }
+
+  .legal-prose strong {
+    @apply font-semibold text-zinc-200;
+  }
+
+  .legal-prose table {
+    @apply w-full border-collapse;
+  }
+
   .review-prose a.inline {
     @apply font-medium text-emerald-400 underline decoration-emerald-400/30 underline-offset-4 transition-colors hover:text-emerald-300;
   }

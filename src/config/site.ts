@@ -19,4 +19,8 @@ export const PUBLIC_ROUTES = [
   "/siteground-ai-studio-free-tokens",
   "/coderick-ai-vs-bolt",
   "/coderick-ai-vs-v0",
+  "/privacy-policy",
+  "/cookie-policy",
+  "/terms",
+  "/affiliate-disclosure",
 ] as const;
