@@ -6,7 +6,7 @@
 // manage slugs/landing pages in the SiteGround dashboard.
 export const AFFILIATE_LINKS = {
   /** Primary CTA: hero, header, sticky bar, final section */
-  primary: "https://siteground.co.uk/go/3zd28qf96z",
+  primary: "https://siteground.co.uk/go/2i5gcafjid",
   coderickAi: "https://siteground.co.uk/go/hostadvance-coderick",
   aiEcommerceBuilder: "https://siteground.co.uk/go/hostadvance-ecommerce",
   sitegroundAiStudio: "https://siteground.co.uk/go/hostadvance-aistudio",
