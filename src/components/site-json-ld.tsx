@@ -1,4 +1,5 @@
 import { SITE_NAME, SITE_URL } from "@/config/site";
+import { JsonLd } from "@/components/json-ld";
 
 export function SiteJsonLd() {
   const jsonLd = {
@@ -6,6 +7,7 @@ export function SiteJsonLd() {
     "@graph": [
       {
         "@type": "Organization",
+        "@id": `${SITE_URL}/#organization`,
         name: SITE_NAME,
         url: SITE_URL,
         description:
@@ -13,16 +15,13 @@ export function SiteJsonLd() {
       },
       {
         "@type": "WebSite",
+        "@id": `${SITE_URL}/#website`,
         name: SITE_NAME,
         url: SITE_URL,
+        publisher: { "@id": `${SITE_URL}/#organization` },
       },
     ],
   };
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
-  );
+  return <JsonLd data={jsonLd} />;
 }

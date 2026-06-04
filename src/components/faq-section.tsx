@@ -1,3 +1,5 @@
+import { JsonLd } from "@/components/json-ld";
+
 export type FaqItem = {
   question: string;
   answer: string;
@@ -25,10 +27,7 @@ export function FaqSection({
 
   return (
     <section className="mt-16" aria-labelledby="faq-heading">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <JsonLd data={jsonLd} />
       <h2
         id="faq-heading"
         className="font-display text-2xl font-bold tracking-tight text-white sm:text-3xl"

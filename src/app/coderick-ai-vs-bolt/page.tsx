@@ -11,8 +11,9 @@ export const metadata = createPageMetadata({
   path: "/coderick-ai-vs-bolt",
 });
 
-// Bolt: source https://support.bolt.new/building/intro-bolt
-// Bolt: source https://support.bolt.new/cloud/bolt-cloud
+// source: https://support.bolt.new/building/intro-bolt
+// source: https://support.bolt.new/cloud/bolt-cloud
+// source: https://www.siteground.com/blog/siteground-coderick-ai-webinar-2026/
 const faqs = [
   {
     question: "Are both full-stack vibe coders?",
@@ -27,13 +28,14 @@ const faqs = [
   {
     question: "Can I leave the platform later?",
     answer:
-      "Coderick does not offer raw source export to other hosts per SiteGround docs. Bolt supports sharing/publishing workflows; check Bolt docs for code ownership and external deployment options on your plan.",
+      "Coderick does not offer raw source export to other hosts per SiteGround's webinar. For Bolt, review Share/Publish and Bolt Cloud docs on your plan rather than assuming the same portability rules.",
   },
 ];
 
 export default function CoderickAiVsBoltPage() {
   return (
     <ReviewLayout
+      breadcrumb={{ name: "Coderick AI vs Bolt", path: "/coderick-ai-vs-bolt" }}
       ctaLink="coderickAi"
       ctaButtonLabel="Try Coderick AI"
       relatedLinks={[
@@ -48,9 +50,15 @@ export default function CoderickAiVsBoltPage() {
       </p>
       <h1>Coderick AI vs Bolt.new: which vibe coder fits your stack?</h1>
       <p className="lead">
-        Bolt.new (StackBlitz) and Coderick AI both promise fast apps from prompts—but they
-        optimise for different hosting stories. We earn a commission if you choose SiteGround
-        through our links.
+        <strong className="text-zinc-200">Coderick AI and Bolt.new both turn prompts into web
+        apps,</strong> but Coderick ships on SiteGround&apos;s managed hosting while Bolt publishes
+        inside Bolt Cloud and WebContainers on{" "}
+        <code className="text-zinc-400">.bolt.host</code> subdomains. We earn a commission if you
+        choose SiteGround through our links—see our{" "}
+        <Link href="/coderick-ai-review" className="inline">
+          Coderick AI review
+        </Link>{" "}
+        for the SiteGround side.
       </p>
 
       <h2>Quick verdict</h2>
@@ -68,7 +76,11 @@ export default function CoderickAiVsBoltPage() {
       <p>
         Chat → production-ready sites/apps with version control, authentication, and automatic
         deployment on SiteGround&apos;s stack (Feb 2026 launch). Best aligned with CRMs, client
-        portals, and business sites that should live on SiteGround long term.
+        portals, and business sites that should live on SiteGround long term. See{" "}
+        <Link href="/coderick-ai-export-code" className="inline">
+          export and portability
+        </Link>{" "}
+        before you assume you can download the codebase.
       </p>
 
       <h2>Bolt.new</h2>
@@ -91,14 +103,24 @@ export default function CoderickAiVsBoltPage() {
         Coderick does not document downloading raw source for migration off SiteGround—it is
         managed-by-design with in-platform versioning.
       </p>
+      {/* source: https://support.bolt.new/cloud/bolt-cloud */}
       <p>
-        Bolt emphasises code ownership via GitHub sync and hybrid deployments in enterprise
-        materials—validate export paths on your plan rather than assuming parity with Coderick.
+        Bolt documents Share and Publish flows and Bolt Cloud hosting on bolt.host subdomains.
+        Review Bolt&apos;s support articles for your plan if you need custom domains or production
+        cutover details—we do not claim feature parity with Coderick here.
       </p>
 
       <TrialCTA link="coderickAi" className="mt-10" />
 
       <FaqSection items={faqs} />
+
+      <p className="mt-10 text-sm text-zinc-500">
+        Also compare{" "}
+        <Link href="/coderick-ai-vs-v0" className="inline">
+          Coderick vs v0
+        </Link>
+        .
+      </p>
     </ReviewLayout>
   );
 }

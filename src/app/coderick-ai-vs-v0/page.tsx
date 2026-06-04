@@ -11,6 +11,8 @@ export const metadata = createPageMetadata({
   path: "/coderick-ai-vs-v0",
 });
 
+// source: https://v0.dev/docs
+// source: https://v0.app/solutions/ai-ui-design-generator
 const faqs = [
   {
     question: "Is v0 a competitor to Coderick?",
@@ -20,7 +22,7 @@ const faqs = [
   {
     question: "Does v0 include hosting?",
     answer:
-      "v0 can deploy via Vercel; it is not SiteGround hosting. Coderick includes SiteGround enterprise hosting and automatic deployment in its product story.",
+      "v0 documents deploy to infrastructure powered by Vercel; it is not SiteGround hosting. Coderick includes SiteGround enterprise hosting and automatic deployment in its product story.",
   },
   {
     question: "Which is better for a CRM?",
@@ -32,6 +34,7 @@ const faqs = [
 export default function CoderickAiVsV0Page() {
   return (
     <ReviewLayout
+      breadcrumb={{ name: "Coderick AI vs v0", path: "/coderick-ai-vs-v0" }}
       ctaLink="coderickAi"
       ctaButtonLabel="Try Coderick AI"
       relatedLinks={[
@@ -45,9 +48,17 @@ export default function CoderickAiVsV0Page() {
       </p>
       <h1>Coderick AI vs v0: full app platform vs UI generator</h1>
       <p className="lead">
-        Comparing these tools only by “AI for web” misses the point. v0 is Vercel&apos;s UI
-        generation layer for React/Next.js teams. Coderick is SiteGround&apos;s full-stack vibe
-        coder with hosting included.
+        <strong className="text-zinc-200">Coderick AI and v0 solve different problems:</strong>{" "}
+        Coderick is a full hosted app builder on SiteGround; v0 is Vercel&apos;s AI for generating
+        React/Next UI you integrate into an existing codebase and deploy on Vercel. Read{" "}
+        <Link href="/coderick-ai-export-code" className="inline">
+          Coderick export limits
+        </Link>{" "}
+        and our{" "}
+        <Link href="/coderick-ai-review" className="inline">
+          Coderick review
+        </Link>{" "}
+        before you pick a stack.
       </p>
 
       <h2>Quick verdict</h2>
@@ -64,15 +75,19 @@ export default function CoderickAiVsV0Page() {
       <p>
         Plain-language builds for websites, web apps, CRMs, and portals; version control,
         authentication, automatic deployment on SiteGround infrastructure. Output is meant to be
-        production-ready on SiteGround from day one—not a component drop-in.
+        production-ready on SiteGround from day one—not a component drop-in. Workflow example:{" "}
+        <Link href="/coderick-ai-build-a-crm" className="inline">
+          build a CRM with Coderick
+        </Link>
+        .
       </p>
 
       <h2>v0 by Vercel</h2>
       {/* source: https://v0.dev/docs */}
       <p>
-        v0 is an AI agent for creating code and full-stack apps, but its strength in the market
-        is high-fidelity UI: React components, Tailwind, shadcn/ui defaults, design mode edits,
-        and deployment paths oriented to Vercel&apos;s ecosystem.
+        v0 is an AI agent that helps create real code and full-stack apps. Per v0 docs, it supports
+        high-fidelity UIs, React components, Tailwind, shadcn/ui defaults, design mode edits, and
+        deploy to infrastructure powered by Vercel.
       </p>
       {/* source: https://v0.app/solutions/ai-ui-design-generator */}
       <p>
@@ -82,14 +97,32 @@ export default function CoderickAiVsV0Page() {
 
       <h2>Why they are not direct substitutes</h2>
       <ul>
-        <li><strong>Backend:</strong> Coderick advertises integrated auth + deploy on SiteGround; v0 may build full-stack prototypes but engineering teams still own production architecture off-platform.</li>
-        <li><strong>Audience:</strong> Coderick for operators who want managed hosting; v0 for product/engineering teams already on Vercel.</li>
-        <li><strong>Portability:</strong> Coderick is managed on SiteGround; v0 code is portable as React source you control in Git.</li>
+        <li>
+          <strong>Backend:</strong> Coderick advertises integrated auth + deploy on SiteGround; v0
+          can build full-stack prototypes, but production hosting on Vercel is a separate product
+          path per v0 docs.
+        </li>
+        <li>
+          <strong>Audience:</strong> Coderick for operators who want managed hosting; v0 for
+          product/engineering teams already on Vercel.
+        </li>
+        <li>
+          <strong>Portability:</strong> Coderick is managed on SiteGround; v0 output is React
+          source you integrate into your own repo.
+        </li>
       </ul>
 
       <TrialCTA link="coderickAi" className="mt-10" />
 
       <FaqSection items={faqs} />
+
+      <p className="mt-10 text-sm text-zinc-500">
+        Compare hosting models in{" "}
+        <Link href="/coderick-ai-vs-bolt" className="inline">
+          Coderick vs Bolt
+        </Link>
+        .
+      </p>
     </ReviewLayout>
   );
 }

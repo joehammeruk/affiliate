@@ -3,6 +3,7 @@ import { FaqSection } from "@/components/faq-section";
 import { ReviewLayout } from "@/components/review-layout";
 import { TrialCTA } from "@/components/trial-cta";
 import { createPageMetadata } from "@/lib/metadata";
+import { hubReviewJsonLd } from "@/lib/json-ld";
 
 export const metadata = createPageMetadata({
   title: "SiteGround AI Studio Review — 15+ AI Agents",
@@ -42,6 +43,13 @@ const faqs = [
 export default function AiStudioReviewPage() {
   return (
     <ReviewLayout
+      breadcrumb={{ name: "AI Studio review", path: "/ai-studio-review" }}
+      structuredData={hubReviewJsonLd({
+        productName: "SiteGround AI Studio",
+        description:
+          "Unified AI workspace with multiple models, task-trained agents, WordPress AI Agent, image generation, and free Essential tokens for SiteGround hosting clients.",
+        pagePath: "/ai-studio-review",
+      })}
       ctaLink="sitegroundAiStudio"
       ctaHeading="Try SiteGround AI Studio free for 14 days"
       ctaButtonLabel="Start AI Studio trial"
@@ -57,10 +65,11 @@ export default function AiStudioReviewPage() {
       </p>
       <h1>SiteGround AI Studio review: one workspace, 15+ AI agents</h1>
       <p className="lead">
-        <em className="text-zinc-300 not-italic font-medium">Our take:</em> AI Studio
-        feels most compelling if you already host with SiteGround or run WordPress
-        sites you want to operate from one AI workspace—rather than juggling separate
-        chat subscriptions for every task.
+        <strong className="text-zinc-200">SiteGround AI Studio</strong> is one workspace for
+        multiple AI models, marketing and SEO agents, image generation, and a WordPress AI Agent
+        that can run admin tasks via chat. It fits site owners who already use SiteGround hosting
+        or manage WordPress stores and want those jobs in a single product—not scattered chat
+        subscriptions.
       </p>
 
       <TrialCTA

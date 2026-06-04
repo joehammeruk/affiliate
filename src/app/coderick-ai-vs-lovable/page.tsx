@@ -39,6 +39,7 @@ const faqs = [
 export default function CoderickAiVsLovablePage() {
   return (
     <ReviewLayout
+      breadcrumb={{ name: "Coderick AI vs Lovable", path: "/coderick-ai-vs-lovable" }}
       ctaLink="coderickAi"
       ctaHeading="Try Coderick AI on SiteGround"
       ctaBody="SiteGround lists a 14-day Coderick AI free trial on its product page (no credit card). Lovable has separate signup and trial rules."
@@ -53,10 +54,11 @@ export default function CoderickAiVsLovablePage() {
       </p>
       <h1>Coderick AI vs Lovable: which vibe coding tool ships real apps?</h1>
       <p className="lead">
-        Both tools promise apps from conversation. The split is what &quot;done&quot; means:
-        a shareable prototype, or a production site on infrastructure you are willing
-        to run long term. This comparison stays factual — we earn a commission only
-        if you choose SiteGround through our links.
+        <strong className="text-zinc-200">Coderick AI and Lovable</strong> both build web apps
+        from chat, but they differ on hosting: Coderick targets production-ready apps on
+        SiteGround&apos;s managed stack; Lovable targets its own cloud (with optional GitHub sync).
+        This comparison stays factual—we earn a commission only if you choose SiteGround through
+        our links.
       </p>
 
       <h2>Quick verdict</h2>

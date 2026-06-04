@@ -3,6 +3,7 @@ import { FaqSection } from "@/components/faq-section";
 import { ReviewLayout } from "@/components/review-layout";
 import { TrialCTA } from "@/components/trial-cta";
 import { createPageMetadata } from "@/lib/metadata";
+import { hubReviewJsonLd } from "@/lib/json-ld";
 
 export const metadata = createPageMetadata({
   title: "Coderick AI Review — SiteGround Vibe Coding Builder",
@@ -44,6 +45,13 @@ const faqs = [
 export default function CoderickAiReviewPage() {
   return (
     <ReviewLayout
+      breadcrumb={{ name: "Coderick AI review", path: "/coderick-ai-review" }}
+      structuredData={hubReviewJsonLd({
+        productName: "Coderick AI",
+        description:
+          "SiteGround vibe-coding builder: plain-language chat to production-ready websites and web apps with version control, authentication, and deployment on SiteGround hosting.",
+        pagePath: "/coderick-ai-review",
+      })}
       ctaLink="coderickAi"
       ctaHeading="Try Coderick AI free for 14 days"
       ctaButtonLabel="Start Coderick AI trial"
@@ -61,10 +69,10 @@ export default function CoderickAiReviewPage() {
       </p>
       <h1>Coderick AI review: vibe coding that ships on SiteGround</h1>
       <p className="lead">
-        Coderick AI is SiteGround&apos;s answer to the new wave of chat-driven app
-        builders. The pitch is simple: describe your product in everyday language,
-        get a production-ready site or web app, and host it on SiteGround&apos;s stack
-        without a separate deployment project.
+        <strong className="text-zinc-200">Coderick AI</strong> is SiteGround&apos;s vibe-coding
+        builder: you describe a site or web app in plain language, and SiteGround generates a
+        production-ready project with authentication, version history, and deployment on its
+        hosting stack—without a separate DevOps setup.
       </p>
 
       {/* source: https://www.siteground.com/coderick-ai */}

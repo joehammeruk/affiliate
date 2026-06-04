@@ -25,7 +25,7 @@ const faqs = [
   {
     question: "What happens when I run out?",
     answer:
-      "You wait for the monthly reset or upgrade to a paid AI Studio tier with a higher allowance. Check in-product messaging for your account.",
+      "SiteGround documents monthly token resets on the Essential bundle; for limits after exhaustion, follow in-product messaging and plan options in AI Studio.",
   },
   {
     question: "Is Essential the same as the 14-day trial?",
@@ -37,12 +37,13 @@ const faqs = [
 export default function SitegroundAiStudioFreeTokensPage() {
   return (
     <ReviewLayout
+      breadcrumb={{ name: "AI Studio free tokens", path: "/siteground-ai-studio-free-tokens" }}
       ctaLink="sitegroundAiStudio"
       ctaButtonLabel="Open AI Studio"
       relatedLinks={[
         { href: "/ai-studio-review", label: "AI Studio review" },
         { href: "/ai-agent-wordpress-guide", label: "WordPress AI Agent guide" },
-        { href: "/", label: "Home" },
+        { href: "/", label: "All SiteGround AI tools" },
       ]}
     >
       <p className="text-xs font-bold uppercase tracking-[0.2em] text-emerald-600">
@@ -50,17 +51,21 @@ export default function SitegroundAiStudioFreeTokensPage() {
       </p>
       <h1>How far do 20,000 free AI Studio tokens go?</h1>
       <p className="lead">
-        If you already host with SiteGround, the Essential AI Studio plan can include{" "}
-        <strong className="text-zinc-200">20,000 tokens per month</strong> (resets monthly).
-        SiteGround does not publish a detailed public ledger of tokens per click in the docs we
-        rely on—this guide explains how to budget conservatively and what to watch in-product.
+        <strong className="text-zinc-200">SiteGround hosting clients can get 20,000 AI Studio
+        tokens per month</strong> on the free Essential plan (resets monthly)—enough for light
+        weekly marketing and WordPress agent work if you budget carefully. SiteGround does not
+        publish a per-click token menu in public docs—see our{" "}
+        <Link href="/ai-studio-review" className="inline">
+          AI Studio review
+        </Link>{" "}
+        for the full product picture and use in-product counters to track real usage.
       </p>
 
       <h2>What tokens are for</h2>
-      <p>
-        Tokens measure AI usage: longer prompts, longer answers, multi-step agent runs, and
-        image generation all consume allowance. Heavier agents (WordPress operations, multi-model
-        chats, image jobs) burn faster than a short SEO headline tweak.
+      <p className="text-sm text-zinc-500">
+        <em>Practical note:</em> AI Studio tracks usage in tokens inside the product. Longer
+        prompts, longer answers, multi-step agent runs, and image generation typically use more
+        allowance than a single short headline—confirm behaviour in your account.
       </p>
 
       <h2>Practical budgeting (our framework, not SiteGround math)</h2>
@@ -78,23 +83,32 @@ export default function SitegroundAiStudioFreeTokensPage() {
       <ol>
         <li>One task per thread—do not reload entire site context every message.</li>
         <li>Use specific agents (SEO Expert, Email Marketer) instead of general chat for specialised work.</li>
-        <li>Enable Power Mode only for batches you intend to run.</li>
-        <li>Check usage dashboard inside AI Studio weekly if SiteGround exposes counters on your plan.</li>
+        <li>Enable Power Mode only for batches you intend to run (see the{" "}
+          <Link href="/ai-agent-wordpress-guide" className="inline">
+            WordPress AI Agent guide
+          </Link>
+          ).
+        </li>
+        <li>Check usage counters inside AI Studio if your plan exposes them.</li>
         <li>Reserve image generation for final assets, not every brainstorm.</li>
       </ol>
 
       <h2>When to upgrade</h2>
       <p>
-        If you hit the ceiling mid-month while running client sites, upgrade to a paid AI Studio
-        plan or split high-volume automation back to human admins for the rest of the cycle.
-        Token resets monthly—plan campaigns around that date if SiteGround shows it in billing.
+        If you hit the ceiling mid-month while running client sites, review paid AI Studio tiers on
+        SiteGround&apos;s pricing page or split high-volume work back to human admins for the rest
+        of the cycle. Tokens reset monthly on the Essential bundle.
       </p>
 
       <h2>What we will not claim</h2>
       <p>
         We are not converting 20,000 tokens into “47 blog posts” or similar—without SiteGround’s
         official per-action table, that would be fabricated. Validate consumption with your real
-        workflows during Essential access.
+        workflows during Essential access. Unsure whether you need a general chat tool too? See{" "}
+        <Link href="/ai-studio-vs-chatgpt-plus" className="inline">
+          AI Studio vs ChatGPT Plus
+        </Link>
+        .
       </p>
 
       <TrialCTA link="sitegroundAiStudio" className="mt-10" />

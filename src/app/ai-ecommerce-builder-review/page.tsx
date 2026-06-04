@@ -3,6 +3,7 @@ import { FaqSection } from "@/components/faq-section";
 import { ReviewLayout } from "@/components/review-layout";
 import { TrialCTA } from "@/components/trial-cta";
 import { createPageMetadata } from "@/lib/metadata";
+import { hubReviewJsonLd } from "@/lib/json-ld";
 
 export const metadata = createPageMetadata({
   title: "SiteGround AI Ecommerce Builder Review",
@@ -44,6 +45,13 @@ const faqs = [
 export default function AiEcommerceBuilderReviewPage() {
   return (
     <ReviewLayout
+      breadcrumb={{ name: "AI ecommerce builder review", path: "/ai-ecommerce-builder-review" }}
+      structuredData={hubReviewJsonLd({
+        productName: "SiteGround AI Website & Ecommerce Builder",
+        description:
+          "Visual drag-and-drop website and store builder with native AI for copy, images, and layouts; start as a site and add ecommerce when needed.",
+        pagePath: "/ai-ecommerce-builder-review",
+      })}
       ctaLink="aiEcommerceBuilder"
       ctaHeading="Try the AI builder free for 14 days"
       ctaButtonLabel="Start builder trial"
@@ -58,11 +66,10 @@ export default function AiEcommerceBuilderReviewPage() {
       </p>
       <h1>SiteGround AI website &amp; ecommerce builder review</h1>
       <p className="lead">
-        SiteGround&apos;s builder targets owners who want one platform for a polished
-        site and, later, a store — with AI filling in copy and visuals along the way.
-        Public detail on this product is thinner than on Coderick AI or AI Studio, so
-        this review stays conservative and flags what SiteGround states on its own
-        pages.
+        <strong className="text-zinc-200">SiteGround&apos;s AI website and ecommerce builder</strong>{" "}
+        is a no-code, drag-and-drop platform for business sites and online stores, with AI help for
+        product copy, images, and layouts. This review stays conservative—public detail is thinner
+        than on Coderick AI or AI Studio—and sticks to what SiteGround publishes on its own pages.
       </p>
 
       {/* source: https://www.siteground.com/ecommerce */}

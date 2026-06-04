@@ -11,6 +11,8 @@ export const metadata = createPageMetadata({
   path: "/coderick-ai-export-code",
 });
 
+// source: https://www.siteground.com/blog/siteground-coderick-ai-webinar-2026/
+// source: https://www.siteground.com/academy/turn-claude-design-project-into-real-website/
 const faqs = [
   {
     question: "Can I download a ZIP of my Coderick project?",
@@ -37,6 +39,7 @@ const faqs = [
 export default function CoderickAiExportCodePage() {
   return (
     <ReviewLayout
+      breadcrumb={{ name: "Export code from Coderick AI", path: "/coderick-ai-export-code" }}
       ctaLink="coderickAi"
       ctaButtonLabel="Try Coderick AI"
       relatedLinks={[
@@ -54,6 +57,11 @@ export default function CoderickAiExportCodePage() {
         Short answer: <strong className="text-zinc-200">do not plan on downloading a repo and
         leaving SiteGround hosting</strong> the way you would with some Git-first vibe coders.
         You <em>do</em> get platform versioning and a managed path to production on SiteGround.
+        For the full product picture, read our{" "}
+        <Link href="/coderick-ai-review" className="inline">
+          Coderick AI review
+        </Link>
+        .
       </p>
 
       <h2>What SiteGround says about export</h2>
@@ -93,8 +101,26 @@ export default function CoderickAiExportCodePage() {
 
       <h2>Who should care</h2>
       <ul>
-        <li><strong>Stay if:</strong> you want hosting, auth, and deploy handled; you are fine with SiteGround as the long-term home.</li>
-        <li><strong>Look elsewhere if:</strong> legal/compliance requires self-hosted source, or you must run on a specific cloud tenant you control.</li>
+        <li>
+          <strong>Stay if:</strong> you want hosting, auth, and deploy handled; you are fine with
+          SiteGround as the long-term home—see{" "}
+          <Link href="/coderick-ai-build-a-crm" className="inline">
+            building a CRM with Coderick
+          </Link>
+          .
+        </li>
+        <li>
+          <strong>Look elsewhere if:</strong> legal/compliance requires self-hosted source, or you
+          must run on a specific cloud tenant you control—compare{" "}
+          <Link href="/coderick-ai-vs-bolt" className="inline">
+            Coderick vs Bolt
+          </Link>{" "}
+          and{" "}
+          <Link href="/coderick-ai-vs-v0" className="inline">
+            Coderick vs v0
+          </Link>{" "}
+          for different portability stories.
+        </li>
       </ul>
 
       <TrialCTA link="coderickAi" className="mt-10" buttonLabel="Test Coderick on SiteGround" />

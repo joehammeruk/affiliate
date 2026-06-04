@@ -5,8 +5,8 @@ import { ScrollLink } from "@/components/scroll-link";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { SiteJsonLd } from "@/components/site-json-ld";
-import { AFFILIATE_LINKS } from "@/config/affiliate-links";
 import { PRODUCTS } from "@/config/products";
+import { SITE_URL } from "@/config/site";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -101,7 +101,7 @@ export default function HomePage() {
         "@type": "SoftwareApplication",
         name: product.name,
         description: product.description,
-        url: AFFILIATE_LINKS[product.linkKey],
+        url: `${SITE_URL}${product.reviewPath}`,
       },
     })),
   };

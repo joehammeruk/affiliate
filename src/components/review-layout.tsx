@@ -1,8 +1,10 @@
 import Link from "next/link";
+import { JsonLd } from "@/components/json-ld";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { TrialCTA } from "@/components/trial-cta";
 import type { AffiliateLinkKey } from "@/config/affiliate-links";
+import { breadcrumbJsonLd } from "@/lib/json-ld";
 
 export type RelatedLink = {
   href: string;
@@ -16,6 +18,10 @@ type ReviewLayoutProps = {
   ctaBody?: string;
   ctaButtonLabel?: string;
   relatedLinks?: RelatedLink[];
+  /** BreadcrumbList: Home > page (required on review/comparison/guide pages). */
+  breadcrumb: { name: string; path: string };
+  /** Optional extra JSON-LD (e.g. hub SoftwareApplication + Review). */
+  structuredData?: Record<string, unknown>;
 };
 
 export function ReviewLayout({
@@ -25,9 +31,13 @@ export function ReviewLayout({
   ctaBody,
   ctaButtonLabel,
   relatedLinks = [],
+  breadcrumb,
+  structuredData,
 }: ReviewLayoutProps) {
   return (
     <>
+      <JsonLd data={breadcrumbJsonLd(breadcrumb.name, breadcrumb.path)} />
+      {structuredData ? <JsonLd data={structuredData} /> : null}
       <div
         className="noise pointer-events-none fixed inset-0 z-30 opacity-40 mix-blend-overlay"
         aria-hidden="true"

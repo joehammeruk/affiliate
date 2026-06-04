@@ -11,6 +11,7 @@ export const metadata = createPageMetadata({
   path: "/coderick-ai-build-a-crm",
 });
 
+// source: https://www.siteground.com/blog/siteground-coderick-ai-webinar-2026/
 const faqs = [
   {
     question: "Can Coderick AI build a real CRM, not just a mockup?",
@@ -25,7 +26,7 @@ const faqs = [
   {
     question: "Can I move the CRM off SiteGround later?",
     answer:
-      "SiteGround describes Coderick as a fully managed platform hosted on its infrastructure. Treat portability as something to confirm in official docs before you depend on exit paths.",
+      "SiteGround's Coderick webinar states there is no option to download raw source or export projects to another host—confirm current terms on SiteGround before you depend on exit paths.",
   },
   {
     question: "What should I define before I start chatting?",
@@ -37,6 +38,7 @@ const faqs = [
 export default function CoderickAiBuildACrmPage() {
   return (
     <ReviewLayout
+      breadcrumb={{ name: "Build a CRM with Coderick AI", path: "/coderick-ai-build-a-crm" }}
       ctaLink="coderickAi"
       ctaHeading="Start building on Coderick AI"
       ctaButtonLabel="Try Coderick AI"
@@ -51,10 +53,19 @@ export default function CoderickAiBuildACrmPage() {
       </p>
       <h1>How to build a CRM with Coderick AI</h1>
       <p className="lead">
-        A lightweight CRM—leads, deals, notes, and a simple dashboard—is a common internal-tool
-        pattern. SiteGround explicitly lists CRMs and client portals as Coderick use cases. This
-        guide walks the process at a conceptual level so you can run your own trial without
-        us inventing screenshots or UI labels.
+        <strong className="text-zinc-200">You can build a lightweight CRM with Coderick AI</strong> by
+        writing a one-page brief (users, pipeline stages, permissions), then iterating in chat until
+        auth and deployment on SiteGround match your needs. SiteGround lists CRMs and client portals
+        as Coderick use cases. Start
+        from our{" "}
+        <Link href="/coderick-ai-review" className="inline">
+          Coderick AI review
+        </Link>{" "}
+        if you are new to the product; read{" "}
+        <Link href="/coderick-ai-export-code" className="inline">
+          whether you can export code
+        </Link>{" "}
+        before you assume you can move the app off SiteGround later.
       </p>
 
       <TrialCTA link="coderickAi" className="mt-10" buttonLabel="Start Coderick AI trial" />
@@ -106,17 +117,22 @@ export default function CoderickAiBuildACrmPage() {
       </p>
 
       <h2>Step 5 — Preview, then plan go-live</h2>
+      {/* source: https://www.siteground.com/coderick-ai */}
       <p>
-        Use Coderick&apos;s preview during the trial. SiteGround&apos;s trial documentation notes that
-        publishing to a live URL may require a paid plan—check current trial limits before you
-        promise the team a production URL.
+        Use Coderick&apos;s preview during the trial. Check SiteGround&apos;s current Coderick product
+        page and in-app trial messaging for what you can publish before you promise the team a
+        production URL.
       </p>
 
       <h2>Step 6 — Deploy on SiteGround</h2>
       <p>
         When you upgrade, Coderick&apos;s value proposition is automatic deployment on SiteGround
         enterprise hosting—no separate DevOps project. Connect your custom domain when SiteGround
-        enables it on your plan, then onboard users with real accounts.
+        enables it on your plan, then onboard users with real accounts. Compare hosting models in{" "}
+        <Link href="/coderick-ai-vs-bolt" className="inline">
+          Coderick vs Bolt
+        </Link>
+        .
       </p>
 
       <h2>What a CRM here is not</h2>

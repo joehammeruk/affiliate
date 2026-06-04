@@ -17,7 +17,7 @@ const faqs = [
   {
     question: "Can I really launch in one day?",
     answer:
-      "SiteGround markets going from zero to selling in hours for simple catalogs. Complex shipping rules, many SKUs, or custom integrations will take longer—use the day for a credible v1, not perfection.",
+      "SiteGround's ecommerce page describes going from zero to selling in hours for simple catalogs. Complex shipping rules, many SKUs, or custom integrations will take longer—use the day for a credible v1, not perfection.",
   },
   {
     question: "Does AI write product descriptions for me?",
@@ -27,7 +27,7 @@ const faqs = [
   {
     question: "Do I need WordPress?",
     answer:
-      "No for this path—SiteGround ecommerce is a separate integrated builder platform, not a WordPress plugin stack.",
+      "SiteGround ecommerce is its own integrated builder platform—this guide does not use the WordPress plugin stack.",
   },
   {
     question: "When can I take payments live?",
@@ -39,6 +39,7 @@ const faqs = [
 export default function LaunchOnlineStoreWithAiPage() {
   return (
     <ReviewLayout
+      breadcrumb={{ name: "Launch a store with AI", path: "/launch-online-store-with-ai" }}
       ctaLink="aiEcommerceBuilder"
       ctaHeading="Start your ecommerce trial"
       ctaButtonLabel="Open SiteGround ecommerce"
@@ -52,16 +53,26 @@ export default function LaunchOnlineStoreWithAiPage() {
       </p>
       <h1>Launch an online store with AI in a day</h1>
       <p className="lead">
-        This is a practical hour-by-hour style sequence for SiteGround&apos;s ecommerce builder—AI
-        for catalog content, drag-and-drop for layout, built-in checkout when you are ready to
-        sell. Adjust timing to your catalog size; ten SKUs is not five hundred.
+        <strong className="text-zinc-200">Yes—you can launch a simple SiteGround ecommerce store in
+        one day</strong> if you keep the catalog small: trial signup, AI-assisted product copy,
+        drag-and-drop layout, then a test checkout before you announce the URL. This hour-by-hour
+        sequence walks that path—see our{" "}
+        <Link href="/ai-ecommerce-builder-review" className="inline">
+          full ecommerce builder review
+        </Link>{" "}
+        for trade-offs. You get AI for catalog content, drag-and-drop for layout, and checkout when
+        you are ready to sell. Adjust timing to your catalog size; ten SKUs is not five hundred.
       </p>
 
       <TrialCTA link="aiEcommerceBuilder" className="mt-10" buttonLabel="Start 14-day trial" />
 
       <h2>Hour 0–1 — Account, template, brand basics</h2>
       <ol>
-        <li>Start SiteGround&apos;s ecommerce trial from their product page (14-day, no credit card per SiteGround marketing).</li>
+        {/* source: https://www.siteground.com/ecommerce */}
+        <li>
+          Start SiteGround&apos;s ecommerce trial from their product page (check the current trial
+          terms on siteground.com/ecommerce).
+        </li>
         <li>Pick a store-oriented template close to your category (physical goods, services, downloads).</li>
         <li>Set store name, logo, colours, and core pages: Home, Shop, About, Contact, Policies stub.</li>
       </ol>
@@ -83,16 +94,18 @@ export default function LaunchOnlineStoreWithAiPage() {
       </p>
 
       <h2>Hour 3–4 — Layout polish in the visual editor</h2>
+      {/* source: https://www.siteground.com/blog/sell-online-with-the-new-siteground-website-builder/ */}
       <p>
         Switch to drag-and-drop refinement: collection grids, trust badges, shipping/returns
-        snippets, mobile spacing. SiteGround emphasises mobile-responsive templates—scroll on a
+        snippets, mobile spacing. SiteGround describes mobile-responsive templates—scroll on a
         phone, not only desktop.
       </p>
 
       <h2>Hour 4–5 — Payments, tax, shipping</h2>
+      {/* source: https://www.siteground.com/ecommerce */}
       <p>
-        Configure the operational basics SiteGround bundles (payments, tax, shipping rules) using
-        their store manager. Run a <strong>test order</strong> end-to-end. Do not announce the
+        Configure payments, tax, and shipping in the store manager as SiteGround documents on its
+        ecommerce product page. Run a <strong>test order</strong> end-to-end. Do not announce the
         store publicly until checkout succeeds twice (buy and refund if needed).
       </p>
 
@@ -112,16 +125,21 @@ export default function LaunchOnlineStoreWithAiPage() {
       <h2>After day one</h2>
       <p>
         Day one is a live <em>minimum</em> store. Schedule week two for email capture, discounts,
-        and multi-channel feeds if SiteGround offers them on your tier. Read our{" "}
-        <Link href="/ai-ecommerce-builder-review" className="inline">
-          ecommerce builder review
+        and multi-channel feeds if SiteGround offers them on your tier. If you also run WordPress,
+        marketing copy may live in{" "}
+        <Link href="/ai-studio-review" className="inline">
+          AI Studio
         </Link>{" "}
-        for trade-offs before you scale ad spend.
+        instead of this builder.
       </p>
 
       <FaqSection items={faqs} />
 
       <p className="mt-10 text-sm text-zinc-500">
+        <Link href="/ai-ecommerce-builder-review" className="inline">
+          Ecommerce review
+        </Link>{" "}
+        ·{" "}
         <Link href="/" className="inline">
           All tools
         </Link>

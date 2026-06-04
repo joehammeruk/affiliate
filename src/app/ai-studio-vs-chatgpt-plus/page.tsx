@@ -11,21 +11,22 @@ export const metadata = createPageMetadata({
   path: "/ai-studio-vs-chatgpt-plus",
 });
 
+// source: https://openai.com/chatgpt/pricing/
 const faqs = [
   {
     question: "Does AI Studio replace ChatGPT Plus?",
     answer:
-      "Not exactly. ChatGPT Plus is a general assistant subscription. AI Studio bundles multiple models plus SiteGround-trained agents—and a WordPress agent—in one product tied to SiteGround.",
+      "Not exactly. ChatGPT Plus is OpenAI's paid ChatGPT subscription (see openai.com/chatgpt/pricing). AI Studio bundles multiple models plus SiteGround-trained agents—and a WordPress agent—in one SiteGround product.",
   },
   {
     question: "Can AI Studio manage my WordPress site?",
     answer:
-      "Yes, via the WordPress AI Agent and plugin. ChatGPT Plus does not natively connect to your WordPress admin or WooCommerce catalog.",
+      "Yes, via the WordPress AI Agent and plugin. ChatGPT Plus is a general chat product and does not include SiteGround's WordPress connector.",
   },
   {
     question: "Which is cheaper?",
     answer:
-      "Pricing changes on both sides. Compare SiteGround AI Studio plans (and free Essential for hosting clients) against OpenAI's current ChatGPT Plus pricing on their site.",
+      "Pricing changes on both sides. Compare SiteGround AI Studio plans (and free Essential for hosting clients) against OpenAI's current ChatGPT Plus pricing on their site—we do not quote either price here.",
   },
   {
     question: "Do I get image generation in AI Studio?",
@@ -37,6 +38,7 @@ const faqs = [
 export default function AiStudioVsChatgptPlusPage() {
   return (
     <ReviewLayout
+      breadcrumb={{ name: "AI Studio vs ChatGPT Plus", path: "/ai-studio-vs-chatgpt-plus" }}
       ctaLink="sitegroundAiStudio"
       ctaButtonLabel="Try AI Studio"
       relatedLinks={[
@@ -50,9 +52,17 @@ export default function AiStudioVsChatgptPlusPage() {
       </p>
       <h1>SiteGround AI Studio vs ChatGPT Plus</h1>
       <p className="lead">
-        ChatGPT Plus is the default general-purpose AI subscription for millions of people.
-        AI Studio is SiteGround&apos;s answer for <strong>operators</strong>—especially WordPress
-        and ecommerce site owners—who want several models and specialised agents in one workspace.
+        <strong className="text-zinc-200">AI Studio is not the same product as ChatGPT Plus.</strong>{" "}
+        ChatGPT Plus is OpenAI&apos;s general chat subscription;{" "}
+        <Link href="/ai-studio-review" className="inline">
+          SiteGround AI Studio
+        </Link>{" "}
+        is a multi-model workspace with WordPress, SEO, and marketing agents for site operators.
+        Hosting clients should read{" "}
+        <Link href="/siteground-ai-studio-free-tokens" className="inline">
+          how far free tokens go
+        </Link>
+        ; compare current plans on SiteGround and OpenAI before you buy either tool.
       </p>
 
       <h2>Quick verdict</h2>
@@ -67,11 +77,13 @@ export default function AiStudioVsChatgptPlusPage() {
       </p>
 
       <h2>What ChatGPT Plus gives you</h2>
+      {/* source: https://openai.com/chatgpt/pricing/ */}
       <p>
-        ChatGPT Plus is OpenAI&apos;s paid tier for ChatGPT—general writing, analysis, and
-        coding help in a chat UI. It does not ship with SiteGround&apos;s WordPress plugin,
-        WooCommerce-aware agents, or hosting-client AI Studio token bundles. Compare current
-        models and limits on OpenAI&apos;s own pricing page before you buy either tool.
+        Per OpenAI&apos;s ChatGPT pricing page, ChatGPT Plus is the consumer/prosumer subscription
+        for the ChatGPT product (features and model access are listed there and change over time).
+        It does not include SiteGround&apos;s WordPress plugin, WooCommerce-aware agents, or
+        hosting-client AI Studio token bundles. We do not state a dollar price here—check OpenAI
+        and SiteGround pricing pages before you buy.
       </p>
 
       <h2>What AI Studio adds (SiteGround-verified)</h2>
@@ -86,10 +98,13 @@ export default function AiStudioVsChatgptPlusPage() {
 
       <h2>Workflow difference</h2>
       <p>
-        With ChatGPT Plus, you copy prompts and paste results into WordPress, spreadsheets, or
-        ad consoles manually. With AI Studio&apos;s WordPress Agent, operational tasks—plugin
-        updates, post edits, bulk catalog tweaks—can start in chat when you accept the agent&apos;s
-        confirmation flow.
+        With ChatGPT Plus, you typically copy prompts and paste results into WordPress,
+        spreadsheets, or ad consoles manually. With AI Studio&apos;s WordPress Agent (see our{" "}
+        <Link href="/ai-agent-wordpress-guide" className="inline">
+          WordPress guide
+        </Link>
+        ), operational tasks—plugin updates, post edits, bulk catalog tweaks—can start in chat when
+        you accept the agent&apos;s confirmation flow.
       </p>
 
       <h2>Honest overlap</h2>
