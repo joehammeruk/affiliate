@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --color-surface: #09090b;
+  --color-elevated: #18181b;
+  --color-border: rgba(255, 255, 255, 0.08);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[#09090B] text-zinc-100 antialiased;
+    font-family: var(--font-sans);
+  }
+
+  ::selection {
+    @apply bg-emerald-400/35 text-white;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .text-gradient-hero {
+    background: linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #fafafa 38%,
+      #a1a1aa 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .mesh-hero {
+    background-image:
+      radial-gradient(ellipse 90% 70% at 50% -30%, rgba(16, 185, 129, 0.22), transparent 55%),
+      radial-gradient(ellipse 60% 50% at 100% 0%, rgba(6, 182, 212, 0.12), transparent 50%),
+      radial-gradient(ellipse 50% 40% at 0% 20%, rgba(139, 92, 246, 0.1), transparent 45%);
+  }
+
+  .grid-fade {
+    background-image:
+      linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black 20%, transparent 75%);
+  }
+
+  .noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .animate-fade-up {
+      animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    .animate-fade-up-delay {
+      animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.12s both;
+    }
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
