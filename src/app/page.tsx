@@ -23,6 +23,13 @@ const trialPoints = [
   "Cancel anytime during the trial",
 ] as const;
 
+/** Hero discount hook — no percentage (varies weekly). */
+const heroDiscountLine =
+  "New customers get SiteGround's biggest introductory discount — applied automatically at checkout, no code needed.";
+
+// Optional, when confirmed: show a single dated % line under heroDiscountLine.
+// const heroPromoAsOf = "As of June 2026: up to __% off first term";
+
 const reviews = [
   {
     href: "/coderick-ai-review",
@@ -165,12 +172,17 @@ export default function HomePage() {
               ))}
             </ul>
 
-            <div className="animate-fade-up-delay mt-10 flex flex-col items-stretch gap-4 sm:flex-row sm:items-center">
-              <AffiliateLink link="primary" variant="primary" className="group w-full sm:w-auto">
-                Start your free trial
-                <AffiliateArrow />
-              </AffiliateLink>
-              <ScrollLink href="#offers">View all tools</ScrollLink>
+            <div className="animate-fade-up-delay mt-10 flex flex-col gap-4">
+              <p className="max-w-xl rounded-lg border border-emerald-900/35 bg-emerald-950/15 px-3.5 py-2.5 text-sm leading-snug text-zinc-300">
+                {heroDiscountLine}
+              </p>
+              <div className="flex flex-col items-stretch gap-4 sm:flex-row sm:items-center">
+                <AffiliateLink link="primary" variant="primary" className="group w-full sm:w-auto">
+                  Start free — discount auto-applied
+                  <AffiliateArrow />
+                </AffiliateLink>
+                <ScrollLink href="#offers">View all tools</ScrollLink>
+              </div>
             </div>
           </div>
         </section>
