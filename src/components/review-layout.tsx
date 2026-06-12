@@ -4,7 +4,7 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { TrialCTA } from "@/components/trial-cta";
 import type { AffiliateLinkKey } from "@/config/affiliate-links";
-import { breadcrumbJsonLd } from "@/lib/json-ld";
+import { breadcrumbJsonLd, techArticleJsonLd } from "@/lib/json-ld";
 
 export type RelatedLink = {
   href: string;
@@ -20,6 +20,8 @@ type ReviewLayoutProps = {
   relatedLinks?: RelatedLink[];
   /** BreadcrumbList: Home > page (required on review/comparison/guide pages). */
   breadcrumb: { name: string; path: string };
+  /** TechArticle dates, ISO yyyy-mm-dd; modified defaults to published. */
+  dates?: { published: string; modified?: string };
   /** Optional extra JSON-LD (e.g. hub SoftwareApplication + Review). */
   structuredData?: Record<string, unknown>;
 };
@@ -32,11 +34,22 @@ export function ReviewLayout({
   ctaButtonLabel,
   relatedLinks = [],
   breadcrumb,
+  dates,
   structuredData,
 }: ReviewLayoutProps) {
   return (
     <>
       <JsonLd data={breadcrumbJsonLd(breadcrumb.name, breadcrumb.path)} />
+      {dates ? (
+        <JsonLd
+          data={techArticleJsonLd({
+            headline: breadcrumb.name,
+            pagePath: breadcrumb.path,
+            datePublished: dates.published,
+            dateModified: dates.modified,
+          })}
+        />
+      ) : null}
       {structuredData ? <JsonLd data={structuredData} /> : null}
       <div
         className="noise pointer-events-none fixed inset-0 z-30 opacity-40 mix-blend-overlay"

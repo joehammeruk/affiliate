@@ -40,6 +40,7 @@ export default function CoderickAiVsLovablePage() {
   return (
     <ReviewLayout
       breadcrumb={{ name: "Coderick AI vs Lovable", path: "/coderick-ai-vs-lovable" }}
+      dates={{ published: "2026-06-04" }}
       ctaLink="coderickAi"
       ctaHeading="Try Coderick AI on SiteGround"
       ctaBody="SiteGround lists a 14-day Coderick AI free trial on its product page (no credit card). Lovable has separate signup and trial rules."

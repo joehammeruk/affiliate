@@ -35,6 +35,7 @@ export default function CoderickAiVsV0Page() {
   return (
     <ReviewLayout
       breadcrumb={{ name: "Coderick AI vs v0", path: "/coderick-ai-vs-v0" }}
+      dates={{ published: "2026-06-04" }}
       ctaLink="coderickAi"
       ctaButtonLabel="Try Coderick AI"
       relatedLinks={[

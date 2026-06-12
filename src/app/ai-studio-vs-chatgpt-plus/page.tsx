@@ -39,6 +39,7 @@ export default function AiStudioVsChatgptPlusPage() {
   return (
     <ReviewLayout
       breadcrumb={{ name: "AI Studio vs ChatGPT Plus", path: "/ai-studio-vs-chatgpt-plus" }}
+      dates={{ published: "2026-06-04" }}
       ctaLink="sitegroundAiStudio"
       ctaButtonLabel="Try AI Studio"
       relatedLinks={[

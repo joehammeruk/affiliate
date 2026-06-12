@@ -5,11 +5,18 @@ import { SITE_URL } from "@/config/site";
 const AI_CRAWLERS = [
   "GPTBot",
   "ChatGPT-User",
+  "OAI-SearchBot",
   "ClaudeBot",
   "anthropic-ai",
+  "Claude-Web",
   "PerplexityBot",
+  "Perplexity-User",
   "Google-Extended",
   "Applebot-Extended",
+  "Meta-ExternalAgent",
+  "Amazonbot",
+  "DuckAssistBot",
+  "CCBot",
 ] as const;
 
 export default function robots(): MetadataRoute.Robots {

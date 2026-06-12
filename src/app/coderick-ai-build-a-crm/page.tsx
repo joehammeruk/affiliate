@@ -39,6 +39,7 @@ export default function CoderickAiBuildACrmPage() {
   return (
     <ReviewLayout
       breadcrumb={{ name: "Build a CRM with Coderick AI", path: "/coderick-ai-build-a-crm" }}
+      dates={{ published: "2026-06-04" }}
       ctaLink="coderickAi"
       ctaHeading="Start building on Coderick AI"
       ctaButtonLabel="Try Coderick AI"

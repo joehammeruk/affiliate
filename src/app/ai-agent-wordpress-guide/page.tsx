@@ -41,6 +41,7 @@ export default function AiAgentWordpressGuidePage() {
   return (
     <ReviewLayout
       breadcrumb={{ name: "WordPress AI Agent guide", path: "/ai-agent-wordpress-guide" }}
+      dates={{ published: "2026-06-04" }}
       ctaLink="sitegroundAiStudio"
       ctaHeading="Open AI Studio and connect your sites"
       ctaButtonLabel="Start AI Studio trial"

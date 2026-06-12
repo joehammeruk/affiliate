@@ -22,6 +22,34 @@ export function breadcrumbJsonLd(pageName: string, pagePath: string) {
   };
 }
 
+/** Review/comparison/guide pages: TechArticle with real publish dates (ISO yyyy-mm-dd). */
+export function techArticleJsonLd({
+  headline,
+  pagePath,
+  datePublished,
+  dateModified,
+}: {
+  headline: string;
+  pagePath: string;
+  datePublished: string;
+  dateModified?: string;
+}) {
+  const pageUrl = `${SITE_URL}${pagePath}`;
+  return {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    headline,
+    url: pageUrl,
+    mainEntityOfPage: { "@type": "WebPage", "@id": pageUrl },
+    datePublished,
+    dateModified: dateModified ?? datePublished,
+    inLanguage: "en-GB",
+    image: `${SITE_URL}/og.png`,
+    author: { "@id": `${SITE_URL}/#organization` },
+    publisher: { "@id": `${SITE_URL}/#organization` },
+  };
+}
+
 /** Hub review pages: SoftwareApplication + Review (no ratings). */
 export function hubReviewJsonLd({
   productName,

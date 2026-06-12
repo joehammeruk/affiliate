@@ -4,15 +4,14 @@ import { OfferCard } from "@/components/offer-card";
 import { ScrollLink } from "@/components/scroll-link";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { SiteJsonLd } from "@/components/site-json-ld";
 import { PRODUCTS } from "@/config/products";
 import { SITE_URL } from "@/config/site";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Best AI Tools for Builders — 14-Day Free Trials",
+  title: "SiteGround AI Tools — Reviews & Free Trials | HostAdvance",
   description:
-    "Compare Coderick AI, SiteGround AI Studio, and the AI ecommerce builder. Independent reviews, guides, and 14-day free trials.",
+    "Independent reviews of SiteGround's AI tools — Coderick AI, AI Studio, and the AI Website & Ecommerce Builder. Compare, then start a 14-day free trial.",
   path: "/",
   openGraphType: "website",
 });
@@ -115,7 +114,6 @@ export default function HomePage() {
 
   return (
     <>
-      <SiteJsonLd />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -146,9 +144,10 @@ export default function HomePage() {
             </h1>
 
             <p className="animate-fade-up-delay mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400 md:text-xl">
-              Hand-picked platforms for developers, ecommerce founders, and
-              WordPress operators. Start free, scale when you are ready—no credit
-              card games, just serious tools.
+              Independent reviews of SiteGround&apos;s AI tools—Coderick AI, AI
+              Studio, and the AI ecommerce builder—for developers, ecommerce
+              founders, and WordPress operators. Start free, scale when you are
+              ready.
             </p>
 
             <ul className="animate-fade-up-delay mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-x-8 sm:gap-y-2">

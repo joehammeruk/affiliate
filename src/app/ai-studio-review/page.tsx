@@ -44,6 +44,7 @@ export default function AiStudioReviewPage() {
   return (
     <ReviewLayout
       breadcrumb={{ name: "AI Studio review", path: "/ai-studio-review" }}
+      dates={{ published: "2026-06-04" }}
       structuredData={hubReviewJsonLd({
         productName: "SiteGround AI Studio",
         description:

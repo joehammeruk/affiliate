@@ -46,6 +46,7 @@ export default function AiEcommerceBuilderReviewPage() {
   return (
     <ReviewLayout
       breadcrumb={{ name: "AI ecommerce builder review", path: "/ai-ecommerce-builder-review" }}
+      dates={{ published: "2026-06-04" }}
       structuredData={hubReviewJsonLd({
         productName: "SiteGround AI Website & Ecommerce Builder",
         description:

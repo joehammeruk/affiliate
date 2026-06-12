@@ -40,6 +40,7 @@ export default function LaunchOnlineStoreWithAiPage() {
   return (
     <ReviewLayout
       breadcrumb={{ name: "Launch a store with AI", path: "/launch-online-store-with-ai" }}
+      dates={{ published: "2026-06-04" }}
       ctaLink="aiEcommerceBuilder"
       ctaHeading="Start your ecommerce trial"
       ctaButtonLabel="Open SiteGround ecommerce"

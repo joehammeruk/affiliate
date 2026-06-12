@@ -40,6 +40,7 @@ export default function CoderickAiExportCodePage() {
   return (
     <ReviewLayout
       breadcrumb={{ name: "Export code from Coderick AI", path: "/coderick-ai-export-code" }}
+      dates={{ published: "2026-06-04" }}
       ctaLink="coderickAi"
       ctaButtonLabel="Try Coderick AI"
       relatedLinks={[

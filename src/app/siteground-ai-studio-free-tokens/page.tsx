@@ -38,6 +38,7 @@ export default function SitegroundAiStudioFreeTokensPage() {
   return (
     <ReviewLayout
       breadcrumb={{ name: "AI Studio free tokens", path: "/siteground-ai-studio-free-tokens" }}
+      dates={{ published: "2026-06-04" }}
       ctaLink="sitegroundAiStudio"
       ctaButtonLabel="Open AI Studio"
       relatedLinks={[

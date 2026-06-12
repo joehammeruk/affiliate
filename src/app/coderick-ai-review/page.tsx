@@ -46,6 +46,7 @@ export default function CoderickAiReviewPage() {
   return (
     <ReviewLayout
       breadcrumb={{ name: "Coderick AI review", path: "/coderick-ai-review" }}
+      dates={{ published: "2026-06-04" }}
       structuredData={hubReviewJsonLd({
         productName: "Coderick AI",
         description:

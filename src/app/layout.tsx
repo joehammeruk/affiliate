@@ -3,6 +3,7 @@ import { Bricolage_Grotesque, DM_Sans } from "next/font/google";
 import { ConditionalAnalytics } from "@/components/conditional-analytics";
 import { CookieConsentBanner } from "@/components/cookie-consent-banner";
 import { DisclosureBar } from "@/components/disclosure-bar";
+import { SiteJsonLd } from "@/components/site-json-ld";
 import { SITE_NAME, SITE_URL } from "@/config/site";
 import "./globals.css";
 
@@ -20,9 +21,16 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Best AI Tools for Builders — 14-Day Free Trials",
+  title: {
+    default: "HostAdvance — SiteGround AI Tool Reviews & Free Trials",
+    template: "%s | HostAdvance",
+  },
   description:
-    "Coderick AI, AI Ecommerce Builder, and SiteGround AI Studio — compare and start your 14-day free trial. Affiliate partner offers.",
+    "Independent reviews of SiteGround's AI tools — Coderick AI, AI Studio, and the AI Website & Ecommerce Builder — with 14-day free trials.",
+  applicationName: SITE_NAME,
+  authors: [{ name: SITE_NAME, url: SITE_URL }],
+  publisher: SITE_NAME,
+  category: "technology",
   robots: {
     index: true,
     follow: true,
@@ -55,6 +63,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${bricolage.variable} ${dmSans.variable}`}>
       <body className="font-sans">
+        <SiteJsonLd />
         <DisclosureBar />
         {children}
         <CookieConsentBanner />
